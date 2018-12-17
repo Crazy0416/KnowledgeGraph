@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Graph Database Search Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+    <script src="/js/sigma.min.js"></script>
+    <script src="/js/sigma.require.js"></script>
+    <script src="/js/plugins/sigma.renderers.edgeLabels.min.js"></script>
+    <script src="/js/plugins/sigma.parsers.gexf.min.js"></script>
+  <script src="/js/searchQuery.js" type="text/javascript" language="JavaScript"></script>
+  <style>
+      #sigma-container {
+          margin: 0 auto;
+          position: relative;
+          background: #f7f7f7;
+          width: 80%;
+          height: 450px;
+      }
+  </style>
+</head>
+<body>
+  <h1>Graph Search Engine</h1>
+  <form class="form-wrapper cf" action="/search" method="get">
+  	<input type="text" name="q" id="searchbox" placeholder="Search here..." required>
+    <button type="button" onclick="searchQuery(this); return false;">Search</button>
+  </form>
+  <div id='sigma-container'></div>
+  <div class="byline"><p>search box by <a href="http://speckyboy.com/2012/02/15/how-to-build-a-stylish-css3-search-box/">SpeckyBoy</a> featured on <a href="http://thecodeblock.com/search-box-tutorials-using-css3-jquery/">THE CODE BLOCK</a></p></div>
+  <script>
+	  graph = {
+		  nodes: [
+
+		  ],
+		  edges: [
+
+		  ]
+	  };
+	  s = new sigma({
+			  renderer: {
+				  container: document.getElementById('sigma-container'),
+				  type: 'canvas'
+			  },
+			  settings: {
+				  minEdgeSize: 0.1,
+				  maxEdgeSize: 2,
+				  minNodeSize: 1,
+				  maxNodeSize: 8,
+				  edgeLabelSize: 'proportional'
+              }
+	  });
+	  // Load the graph in sigma
+	  s.graph.read(graph);
+	  // Ask sigma to draw it
+	  s.refresh();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+		<script src="/js/searchQuery.js" type="text/javascript" language="JavaScript"></script>
+		<title>검색화면</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>검색 엔진</h1>
+			<div class="content">
+	        <span>
+		        검색:
+	        </span>
+				<input type="text" class="search-box" placeholder="검색어 입력" onkeypress="if(event.keyCode==13) {searchQuery(this); return false;}" />
+			</div>
+			<div class="content">
+				<textarea name="result" id="result_query" cols="30" rows="10"></textarea>
+			</div>
+		</div>
+    </body>
+</html>
