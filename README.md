@@ -24,6 +24,7 @@ vim cayley.json // 밑의 json 복사
 ./cayley http —host:64210	// cayley http로 연결
 cd <프로젝트 path>
 npm install
+mkdir data		// nt 파일 data 디렉토리에 옮기기.
 vim ./config/config.js
 config.RDF_LIST = [“data 폴더에 있는 파일 name”];	// ex) instance_types_en.nt
 NODE_ENV=prod node bin/tripleIndexingToEs.js	// elasticsearch에 nt 파일들 인덱싱
